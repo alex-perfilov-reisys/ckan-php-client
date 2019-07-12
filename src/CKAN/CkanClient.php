@@ -63,6 +63,7 @@ class CkanClient
     public function __construct($api_url, $api_key = null)
     {
         $this->api_url = $api_url;
+		if($this->api_url[-1] !== '/') $this->api_url += '/';
         $this->api_key = $api_key;
 
         // Create cURL object.
